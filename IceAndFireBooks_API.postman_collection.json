@@ -1,0 +1,261 @@
+{
+	"info": {
+		"_postman_id": "9c6bad86-99c8-4631-b1fa-741d798589cc",
+		"name": "Adeva_REST_Assignment_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get External Books (Requirement  1)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/external-books?name=A Clash of Kings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"external-books"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "A Clash of Kings"
+						}
+					]
+				},
+				"description": "Get External books from Ice and Fire song public API"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Book (Requirement 2)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"A Clash of Kings\",\n    \"isbn\": \"978-0553108033\",\n    \"authors\": [\n        \"George R. R. Martin\"\n    ],\n    \"number_of_pages\": 768,\n    \"publisher\": \"Bantam Books\",\n    \"country\": \"United States\",\n    \"release_date\": \"1999-02-02\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get books (Requirement 2)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/books?name=A Clash of Kings&publisher=Bantam Books&country=United States&releaseYear=1998",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"books"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "A Clash of Kings"
+						},
+						{
+							"key": "publisher",
+							"value": "Bantam Books"
+						},
+						{
+							"key": "country",
+							"value": "United States"
+						},
+						{
+							"key": "releaseYear",
+							"value": "1998"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Book by book id (Requirement 2)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/books/5c974ce6da02f3230456200e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"books",
+						"5c974ce6da02f3230456200e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update book (Requirement 2)",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"A Clash of Kings\",\n    \"isbn\": \"978-0553108033\",\n    \"authors\": [\n        \"George R. R. Martin\"\n    ],\n    \"number_of_pages\": 999,\n    \"publisher\": \"Bantam Books\",\n    \"country\": \"United States\",\n    \"release_date\": \"1999-02-02\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/books/5c976fa83da4821c3493ebc3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"books",
+						"5c976fa83da4821c3493ebc3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Book (Requirement 2)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t  \"name\": \"A Clash of King\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/books/5c974ce6da02f3230456200e/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"books",
+						"5c974ce6da02f3230456200e",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Book by bookId (Requirement 2)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/books/5c974ce6da02f3230456200e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"books",
+						"5c974ce6da02f3230456200e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Book (Requirement 2)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/books/5c974ce6da02f3230456200e/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"books",
+						"5c974ce6da02f3230456200e",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

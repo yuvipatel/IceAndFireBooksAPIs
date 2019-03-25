@@ -8,13 +8,10 @@
   },
   "scripts": {
     "build": "tsc",
-    "start": "tsc && pm2 start dist/server.js",
-    "stop": "pm2 kill",
-    "status": "pm2 status",
+    "start": "tsc && node dist/src/server.js",
     "dev": "npm run start && tsc -w",
     "precommit": "tslint -c tslint.json 'src/**/*.ts'",
     "test": "SET \"NODE_ENV=test\" && tsc && mocha dist/test/**/*.test.js",
-    "testRunner": "SET \"NODE_ENV=test\" && tsc && node dist/test/testRunner.js",
     "debug": "tsc && node --inspect dist/server.js"
   },
   "keywords": [],

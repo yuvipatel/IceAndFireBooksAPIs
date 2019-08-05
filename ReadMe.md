@@ -1,4 +1,4 @@
-## IceAndFireBooks CRUD API  
+## IceAndFireBooks CRUD API, API/Task details could be found in 'API Task.docx' in root folder
 
 Install ``Node 10.15.3`` and ``MongoDB 4.0.6 Community``
 
